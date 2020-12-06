@@ -1,0 +1,526 @@
+{
+	"info": {
+		"_postman_id": "90b84f08-36f9-47a1-b5e7-eddeec6ca5e5",
+		"name": "TFJS - Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Image tags / MobileNet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c989705c-1997-4fba-841c-3127e4b6bb65",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://{{host}}/v2/mobilenet?image_url=https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"mobilenet"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Image tags / MobileNet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ebd491d-5ed2-4e27-bd87-a957c291d1e5",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/michel/Code/trying/tfjs-server/postman/teddybear.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{host}}/v2/mobilenet",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"mobilenet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Object detection / CocoSSD",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "13428531-2380-4ccb-8e1f-0928f7f06347",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://{{host}}/v2/cocossd?image_url=https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"cocossd"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Object detection / CocoSSD",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4e2959b-ccea-432b-a477-54a85989c83c",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "Benchmarks/11-dec-2019/nsfw/leboncoin/0c52f16438f7b1c7f7f8e176f84530281b7aaa9e.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{host}}/v2/cocossd",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"cocossd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Toxicity / Conversation AI",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9c6ef45b-006f-4cf5-bc0b-45404d414b6e",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/v2/toxicity?message=I will flay you alive, you fking faggot&lang=en",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"toxicity"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "I will flay you alive, you fking faggot"
+						},
+						{
+							"key": "lang",
+							"value": "en"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debug / Resize",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a7bed2a-0cb5-45cc-96a3-2815ff0bc6c3",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "teddybear.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{host}}/v2/resize?width=300&height=500&fit=inside&image_url=https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"resize"
+					],
+					"query": [
+						{
+							"key": "width",
+							"value": "300"
+						},
+						{
+							"key": "height",
+							"value": "500"
+						},
+						{
+							"key": "fit",
+							"value": "inside"
+						},
+						{
+							"key": "image_url",
+							"value": "https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Text Extraction / Tesseract.js",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0ce30f07-7544-4d67-91e6-22fe8aed71d1",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/v2/tesseract?image_url=https://tesseract.projectnaptha.com/img/eng_bw.png",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"tesseract"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://tesseract.projectnaptha.com/img/eng_bw.png"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Color Extraction / ColorThief",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3de6f668-73c3-457d-9245-85215d697395",
+						"exec": [
+							"var template = `<table>",
+							"  <tbody>",
+							"    <tr><td id=\"color0\" style=\"width:40px\"></td><td id=\"label0\"></td></tr>",
+							"    <tr><td id=\"color1\"></td><td id=\"label1\"></td></tr>",
+							"    <tr><td id=\"color2\"></td><td id=\"label2\"></td></tr>",
+							"    <tr><td id=\"color3\"></td><td id=\"label3\"></td></tr>",
+							"    <tr><td id=\"color4\"></td><td id=\"label4\"></td></tr>",
+							"  </tbody>",
+							"</table>",
+							"",
+							"<script>",
+							"  pm.getData((err, value) =>",
+							"    value.data.forEach((col, i) =>",
+							"      document.getElementById(\"color\"+i).style.background = col",
+							"      //document.getElementById(\"label\"+i).innerHTML = col",
+							"  ))",
+							"</script>`",
+							"",
+							"const res = pm.response",
+							"const json = res.json()",
+							"",
+							"const vizData = {",
+							"  data: json.palette",
+							"}",
+							"",
+							"pm.visualizer.set(template, vizData)",
+							"",
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/v2/colorthief?image_url=https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"colorthief"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Embeddings / MobileNet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24feee75-b59a-4ea1-921f-a0dfb9a580bf",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://{{host}}/v2/embeddings/mobilenet?image_url=https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"embeddings",
+						"mobilenet"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://cdn.pixabay.com/photo/2017/01/30/10/03/book-2020460_960_720.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Embeddings / USE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb2f6e8b-69d1-465d-ae90-a9df57973371",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/v2/embeddings/use?message=I will flay you alive, you fking faggot",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"embeddings",
+						"use"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "I will flay you alive, you fking faggot"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Face Recognition / face-api.js",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "db4d57d8-dbd5-4335-8f86-dbb8f368df66",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/v2/faceapi?image_url=https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/examples/images/bbt3.jpg",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v2",
+						"faceapi"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/examples/images/bbt3.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6e0368e2-43bc-421f-9e59-2a39f7a6a1df",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ea4ee2ea-7d42-4a23-8889-0b0ba7d57472",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
